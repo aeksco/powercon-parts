@@ -70,11 +70,15 @@ with 2.5 mm² wire. Buy receptacles to match that tab, not the more common
 
 Count on three receptacles per connector: 12 for the 1-in 3-out distro box,
 plus three 4-way lever connectors (Wago 221-415 or equal) if the distro is
-star-wired. The in-line couplers are too short for receptacles (the two
-connectors' tab tips face each other about 12 mm apart), so solder the wires
-to their tabs instead. The wiring diagram is in
+star-wired. In the in-line couplers the two
+connectors' tab tips face each other about 24 mm apart, so straight
+receptacles on both would meet head-on: use receptacles on one connector (3
+per coupler) and solder the wires to the other, or solder both. The wiring diagram is in
 `docs/powercon_distro_wiring.html`. Mounting hardware per connector is two
-M3 × 10 countersunk screws, self-tapping into the printed pilot holes; the
+M3 countersunk screws. In the couplers use M3 × 12: they thread into M3 hex
+nuts (5.5 mm across flats, 2.4 mm thick) glued with a drop of CA into hex
+pockets on the inside of the end walls (M3 × 10 reaches under 2 mm into the
+nut). In the distro box M3 × 10 self-tap into printed pilot holes. The
 distro lid takes four M3 × 12 countersunk screws.
 
 ---
