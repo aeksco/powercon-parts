@@ -1,7 +1,7 @@
 [project]
-name = "cad-project"
+name = "powercon-parts"
 version = "0.1.0"
-description = "Parametric 3D-printable parts built with build123d"
+description = "3D-printable housings for Neutrik powerCON connectors, modelled with build123d"
 requires-python = ">=3.12"
 dependencies = [
     "build123d>=0.13.0",

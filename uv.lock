@@ -73,31 +73,6 @@ wheels = [
 ]
 
 [[package]]
-name = "cad-project"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "build123d" },
-    { name = "numpy" },
-    { name = "pillow" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "ocp-vscode" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "build123d", specifier = ">=0.13.0" },
-    { name = "numpy", specifier = ">=2.5.3" },
-    { name = "pillow", specifier = ">=12.2.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [{ name = "ocp-vscode", specifier = ">=4.1.0" }]
-
-[[package]]
 name = "cadquery-ocp-novtk"
 version = "8.0.1.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -854,6 +829,31 @@ sdist = { url = "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c5/9b/6ce1ead737fe496611bda600c263b9a11ae7bd8f41bb13f9bd7e0a2c37a4/platformdirs-4.12.3-py3-none-any.whl", hash = "sha256:080f3b39423b5abfca9a23d84c4e9795f54d395cd8459867a8ded44084fcd5f8", size = 32493 },
 ]
+
+[[package]]
+name = "powercon-parts"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "build123d" },
+    { name = "numpy" },
+    { name = "pillow" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "ocp-vscode" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "build123d", specifier = ">=0.13.0" },
+    { name = "numpy", specifier = ">=2.5.3" },
+    { name = "pillow", specifier = ">=12.2.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ocp-vscode", specifier = ">=4.1.0" }]
 
 [[package]]
 name = "prompt-toolkit"
