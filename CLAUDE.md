@@ -1,16 +1,19 @@
 # CLAUDE.md
 
-This is a **build123d starter project** for parametric, 3D-printable parts. The
-scaffolding (uv, Makefile, exporter) is done. Your job is usually just to
-write or edit a model in `models/`. Don't re-create the scaffolding.
+This is **powercon-parts**: parametric, 3D-printable housings for Neutrik
+powerCON connectors (in-line couplers, an under-mount coupler, a 1-in 3-out
+distro box) written with build123d. The scaffolding (uv, Makefile, exporter)
+is done. Your job is usually just to write or edit a model in `models/`.
+Don't re-create the scaffolding.
 
 ## Quick start
 
 ```sh
 make setup              # once: uv sync (Python 3.12 venv in .venv)
-make                    # export example -> build/{stl,step,obj,png}/example.*
+make                    # export powercon_coupler -> build/{stl,step,obj,png}/
 make MODEL=<name>       # export models/<name>.py
 make all-models         # export every model
+make renders            # refresh docs/renders/ (PNGs the README shows)
 make list               # list models
 make clean              # delete build/
 make view MODEL=<name>  # push to OCP viewer (optional; needs viewer running)
@@ -36,7 +39,8 @@ pyproject.toml       deps managed by uv (build123d, numpy, pillow; ocp-vscode as
 
 ## Making a new part
 
-1. Copy `models/example.py` to `models/<name>.py` (or edit it in place for a one-off).
+1. Copy the closest existing model to `models/<name>.py` (`models/m3_nut_cutter.py`
+   is the smallest).
 2. Keep **all dimensions as named constants at the top, in mm**. No magic numbers in geometry code.
 3. Keep `build()` pure: no I/O, no `show()`, return the shape (`part.part` for `BuildPart`).
 4. Run `make MODEL=<name>`. The exporter fails if the shape is invalid and prints
