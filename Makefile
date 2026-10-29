@@ -1,14 +1,14 @@
-# Usage: make [MODEL=example] <target>
-MODEL ?= example
+# Usage: make [MODEL=powercon_coupler] <target>
+MODEL ?= powercon_coupler
 RUN   := uv run python
 
 # Outputs are grouped by type: build/<type>/<model>.<type>
 OUTPUTS := build/stl/$(MODEL).stl build/step/$(MODEL).step build/obj/$(MODEL).obj build/png/$(MODEL).png
 MODELS  := $(patsubst models/%.py,%,$(filter-out models/__init__.py,$(wildcard models/*.py)))
 
-.PHONY: all stl step obj png all-models setup view clean list help
+.PHONY: all stl step obj png all-models renders setup view clean list help
 
-all: $(OUTPUTS) ## Export STL + STEP + OBJ + isometric PNG for MODEL (default: example)
+all: $(OUTPUTS) ## Export STL + STEP + OBJ + isometric PNG for MODEL (default: powercon_coupler)
 
 stl: build/stl/$(MODEL).stl ## Export STL only
 step: build/step/$(MODEL).step ## Export STEP only
@@ -22,6 +22,9 @@ $(OUTPUTS): $(wildcard models/*.py) $(wildcard lib/*.py) scripts/export.py scrip
 
 all-models: ## Export every model in models/
 	@for m in $(MODELS); do $(MAKE) --no-print-directory MODEL=$$m || exit 1; done
+
+renders: all-models ## Copy every model's PNG render into docs/renders/ (the README shows them)
+	@mkdir -p docs/renders && cp build/png/*.png docs/renders/
 
 setup: ## Install dependencies into .venv
 	uv sync

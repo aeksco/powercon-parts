@@ -27,7 +27,7 @@ def output_path(name: str, fmt: str) -> Path:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("name", help="module name in models/, e.g. 'example'")
+    parser.add_argument("name", help="module name in models/, e.g. 'powercon_coupler'")
     parser.add_argument("--view", action="store_true", help="show in OCP viewer")
     args = parser.parse_args()
 
